@@ -1,9 +1,5 @@
 language: python
-
-cache:
-    pip
-services:
-    - docker
+dist: xenial
 python:
     - "3.6"
     - "3.7"
