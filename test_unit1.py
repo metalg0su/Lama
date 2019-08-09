@@ -1,3 +1,4 @@
+from time import sleep
 import requests
 
 def test_t():
@@ -5,4 +6,5 @@ def test_t():
     while count < 5:
         print("sleep", count)
         sleep(count)
+        count += 1
         assert True

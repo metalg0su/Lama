@@ -1,13 +1,7 @@
 language: python
 
-os: 
-    - linux
-dist: 
-    - xenial
-    - bionic
 cache:
-    directories:
-        - $HOME/.cache/pip
+    pip
 services:
     - docker
 python:
