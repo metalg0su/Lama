@@ -1,3 +1,24 @@
 language: python
-install: pip install pytest
-script: pytest test.py -vv
+
+os: 
+    - linux
+dist: 
+    - xenial
+    - bionic
+cache:
+    directories:
+        - $HOME/.cache/pip
+services:
+    - docker
+python:
+    - "3.6"
+    - "3.7"
+env:
+    - TEST_FILE=test_unit0.py
+    - TEST_FILE=test_unit1.py
+script: pytest $TEST_FILE
+install: pip install requests
+
+notifications:
+    email:
+        - jsj8830@icon.foundation
