@@ -3,12 +3,11 @@ dist: xenial
 python:
     - "3.6"
     - "3.7"
-env:
-    - TEST_FILE=test_unit0.py
-    - TEST_FILE=test_unit1.py
-script: pytest $TEST_FILE
-install: pip install requests
 
-notifications:
-    email:
-        - jsj8830@icon.foundation
+before_install:
+    - sudo apt update
+    - sudo apt install figlet -y
+
+script: 
+    - figlet -f smslant "loopchain test"
+    
