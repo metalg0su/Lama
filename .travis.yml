@@ -1,13 +1,26 @@
 language: python
-dist: xenial
 python:
-    - "3.6"
-    - "3.7"
+ - "3.6"
+ - "3.7"
+
+dist: bionic
+addons:
+ apt:
+  update: true
+  sources: 
+  - figlet 
 
 before_install:
-    - sudo apt update
-    - sudo apt install figlet -y
+ - go version
+ - which go
+ - wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+ - sudo tar -xvf *.gz
+ - sudo mv go /usr/local
+ - export GOPATH=/usr/local/go
+ - export PATH=$GOPATH/bin:$PATH
+ - go version
+ - which go
 
 script: 
-    - figlet -f smslant "loopchain test"
+ - figlet -f smslant "loopchain test"
     
