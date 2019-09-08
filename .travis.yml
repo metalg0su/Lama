@@ -7,17 +7,18 @@ dist: bionic
 addons:
  apt:
   update: true
-  sources: 
+  packages: 
   - figlet 
+ snaps:
+  - name: go
+    confinement: classic
+
+
+env:
+ global:
+  - export PATH=/snap/bin/:$PATH
 
 before_install:
- - go version
- - which go
- - wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
- - sudo tar -xvf *.gz
- - sudo mv go /usr/local
- - export GOPATH=/usr/local/go
- - export PATH=$GOPATH/bin:$PATH
  - go version
  - which go
 
